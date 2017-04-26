@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
         let titleFrame = CGRect(x: 0, y:kStatusBarH + kNavigationBarH, width: kScreenW, height:kTitleViewH)
         let titles = ["推荐","游戏","娱乐","趣玩"]
         let titleView = PageTitleView(frame: titleFrame, titles: titles)
+        titleView.delegate = self
         return titleView
     }()
     
@@ -29,13 +30,16 @@ class HomeViewController: UIViewController {
         
         // 2，确定所有自己控制器
         var childVcs = [UIViewController]()
-        for _ in 0..<4{
+        childVcs.append(RecommendViewController())
+        
+        for _ in 0..<3{
         
             let vc = UIViewController()
             vc.view.backgroundColor = UIColor(r: CGFloat(arc4random_uniform(255)), g: CGFloat(arc4random_uniform(255)), b: CGFloat(arc4random_uniform(255)))
             childVcs.append(vc)
         }
         let contentView = PageContentView(frame: contentFtame, childVcs: childVcs, parentController: self)
+        contentView.delegate = self
         return contentView
     }()
     
@@ -74,6 +78,20 @@ extension HomeViewController{
     }
 }
 
+// MARK:- 调用  PageTitleViewDelegate
+extension HomeViewController : PageTitleViewDelegate{
+
+    func pageTitleView(_ titleView: PageTitleView, selectedIndex index: Int) {
+        contentView.setCurrentIndex(index)
+    }
+}
+// MARK:- 调用 PageContentViewDelegate
+extension HomeViewController : PageContentViewDelegate{
+    
+    func pageContentView(_ contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
+        pageTitleView.setTitleWithProgress(progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
+    }
+}
 
 
 
