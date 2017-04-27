@@ -34,6 +34,8 @@ extension RecommendViewModel {
                 let group = AnchorGroupModel(dic: dic)
                 self.anchorGroups.append(group)
             }
+            
+            print("-----")
         }
     }
 }
