@@ -41,13 +41,13 @@
                         <rect key="frame" x="0.0" y="136" width="246" height="28"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="直播间阿法士大夫" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qto-89-SyM">
-                                <rect key="frame" x="29" y="3" width="106.5" height="16"/>
+                                <rect key="frame" x="29" y="1" width="106.5" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="0.16430165820000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_live_cate_normal" translatesAutoresizingMaskIntoConstraints="NO" id="Lel-r5-ye2">
-                                <rect key="frame" x="10" y="4" width="14" height="14"/>
+                                <rect key="frame" x="10" y="2" width="14" height="14"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Lel-r5-ye2" secondAttribute="height" multiplier="1:1" id="iI9-ry-E5Y"/>
                                 </constraints>
@@ -56,7 +56,7 @@
                         <constraints>
                             <constraint firstItem="qto-89-SyM" firstAttribute="centerY" secondItem="Lel-r5-ye2" secondAttribute="centerY" id="8Hi-wz-zsL"/>
                             <constraint firstItem="Lel-r5-ye2" firstAttribute="leading" secondItem="cq9-tZ-z2g" secondAttribute="leading" constant="10" id="BTe-Ei-Lrr"/>
-                            <constraint firstAttribute="bottom" secondItem="Lel-r5-ye2" secondAttribute="bottom" constant="10" id="fzh-yC-eRr"/>
+                            <constraint firstAttribute="bottom" secondItem="Lel-r5-ye2" secondAttribute="bottom" constant="12" id="fzh-yC-eRr"/>
                             <constraint firstAttribute="height" constant="28" id="khx-Wx-CKP"/>
                             <constraint firstItem="qto-89-SyM" firstAttribute="leading" secondItem="Lel-r5-ye2" secondAttribute="trailing" constant="5" id="zbF-4C-ZzH"/>
                         </constraints>
