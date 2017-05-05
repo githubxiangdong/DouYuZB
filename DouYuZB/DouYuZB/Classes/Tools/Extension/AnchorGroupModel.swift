@@ -29,6 +29,10 @@ class AnchorGroupModel: NSObject {
     /// 创建主播模型对象数组
     lazy var anchors : [AnchorModel] = [AnchorModel]()
     
+    //MARK:- 构造函数
+    override init() {
+        
+    }
     //MARK:- 利用kvc将字典转成模型
     init(dic : [String : Any]) {
         super.init()

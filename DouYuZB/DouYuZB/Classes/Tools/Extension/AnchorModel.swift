@@ -22,6 +22,8 @@ class AnchorModel: NSObject {
     var nickname  : String = ""
     /// 观看人数
     var online : Int = 0
+    /// 所在城市
+    var anchor_city  : String = ""
     
     //MARK:- kvc 重写init方法
     init(dic : [String : Any]) {

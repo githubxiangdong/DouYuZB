@@ -68,7 +68,9 @@ extension RecommendViewController {
 // MARK:- 请求数据
 extension RecommendViewController {
     fileprivate func loadData() {
-       recommendVM.requestData()
+        recommendVM.requestData { 
+            self.collectionView.reloadData()
+        }
     }
 }
 
@@ -76,15 +78,10 @@ extension RecommendViewController {
 extension RecommendViewController : UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        
-        return 12
+        return recommendVM.anchorGroups.count
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        if section == 0 {
-            return 8
-        }
-        return 4
+        return recommendVM.anchorGroups[section].anchors.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -102,8 +99,10 @@ extension RecommendViewController : UICollectionViewDataSource ,UICollectionView
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         // 1, 取出header
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath)
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath) as! CollectionHeaderView
 
+        // 2, 取出模型
+        header.model = recommendVM.anchorGroups[indexPath.section]
         return header
     }
     

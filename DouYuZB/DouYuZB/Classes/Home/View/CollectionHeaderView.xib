@@ -4,14 +4,13 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR">
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="CollectionHeaderView" customModule="DouYuZB" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
@@ -55,6 +54,10 @@
                 <constraint firstItem="fDP-qd-CUG" firstAttribute="centerY" secondItem="wOP-ip-ROt" secondAttribute="centerY" constant="1" id="hhO-2p-Gyg"/>
                 <constraint firstAttribute="trailing" secondItem="443-j1-4Y2" secondAttribute="trailing" constant="10" id="zdE-GT-Y1N"/>
             </constraints>
+            <connections>
+                <outlet property="icon" destination="wOP-ip-ROt" id="G89-3O-4fk"/>
+                <outlet property="title" destination="fDP-qd-CUG" id="hBF-Tr-l4O"/>
+            </connections>
             <point key="canvasLocation" x="-186" y="-113"/>
         </collectionReusableView>
     </objects>
