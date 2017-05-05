@@ -13,6 +13,7 @@ private let kItemW : CGFloat = (kScreenW - 3*kItemMargin) / 2 //图片的宽
 private let kItemH : CGFloat = kItemW * 0.6 + 3 * kItemMargin + 15  // item高度 15是字体label的高度
 private let kNiceItemH : CGFloat = kItemW + 3 * kItemMargin + 15 // 颜值item的高度 15是字体label的高度
 private let kHeaderH : CGFloat = 50 // 组头的高度
+private let kAdViewH = kScreenW * 3/8 // 广告栏的高度
 
 private let kNormalCellID = "kNormalCellID"
 private let kNiceCellID = "kNiceCellID"
@@ -22,7 +23,6 @@ class RecommendViewController: UIViewController {
 
     // MARK:- 懒加载属性
     fileprivate lazy var recommendVM : RecommendViewModel = RecommendViewModel()
-    
     fileprivate lazy var collectionView : UICollectionView = { [unowned self] in
         // 1, 创建布局
         let layout = UICollectionViewFlowLayout()
@@ -44,6 +44,11 @@ class RecommendViewController: UIViewController {
         collectionView.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHeaderViewID)
         return collectionView
     }()
+    fileprivate lazy var adView : RecommendAdv = {
+        let adView = RecommendAdv.recommendAdv()
+        adView.frame = CGRect(x: 0, y: -kAdViewH, width: kScreenW, height: kAdViewH)
+        return adView
+    }()
     // MARK:- 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,15 +66,29 @@ extension RecommendViewController {
     
     fileprivate func setupUI() {
         
+        // 1, 将collectionView添加到view上
         view.addSubview(collectionView)
+        
+        // 2, 将adView添加到collectioView上
+        collectionView.addSubview(adView)
+        
+        // 3, 设置collectionView的内边距
+        collectionView.contentInset = UIEdgeInsetsMake(kAdViewH, 0, 0, 0)
     }
 }
 
 // MARK:- 请求数据
 extension RecommendViewController {
     fileprivate func loadData() {
+        
+        // 1, 请求推荐数据
         recommendVM.requestData { 
             self.collectionView.reloadData()
+        }
+        
+        // 2, 请求广告栏数据
+        recommendVM.requestAds {
+
         }
     }
 }
@@ -85,20 +104,27 @@ extension RecommendViewController : UICollectionViewDataSource ,UICollectionView
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        // 1, 定义cell
-        var cell : UICollectionViewCell!
+        // 1, 取出模型对象
+        let model = recommendVM.anchorGroups[indexPath.section].anchors[indexPath.item]
         
-        // 2, 获取cell
+        // 2, 定义cell
+        var cell : BaseCollectionViewCell!
+        
+        // 3, 获取cell
         if indexPath.section == 1 {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNiceCellID, for: indexPath)
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNiceCellID, for: indexPath) as! NiceCollectionViewCell
         }else{
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath)
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath) as! NormalCollectionViewCell
         }
-        //
+        
+        // 4, 将模型赋给cell
+        cell.model = model
+        
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        // 1, 取出header
+        // 1, 取出header   
+        
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath) as! CollectionHeaderView
 
         // 2, 取出模型

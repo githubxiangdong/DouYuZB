@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -32,52 +31,48 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="直播间阿法士大夫" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qto-89-SyM">
+                        <rect key="frame" x="29" y="137" width="212" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.16430165820000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_live_cate_normal" translatesAutoresizingMaskIntoConstraints="NO" id="Lel-r5-ye2">
+                        <rect key="frame" x="10" y="138" width="14" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Lel-r5-ye2" secondAttribute="height" multiplier="1:1" id="fKk-nA-C8p"/>
+                        </constraints>
+                    </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJL-2s-rhU">
                         <rect key="frame" x="192" y="112" width="49" height="16"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <state key="normal" title="9999" image="Image_online"/>
                     </button>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cq9-tZ-z2g">
-                        <rect key="frame" x="0.0" y="136" width="246" height="28"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="直播间阿法士大夫" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qto-89-SyM">
-                                <rect key="frame" x="29" y="1" width="106.5" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" white="0.16430165820000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_live_cate_normal" translatesAutoresizingMaskIntoConstraints="NO" id="Lel-r5-ye2">
-                                <rect key="frame" x="10" y="2" width="14" height="14"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Lel-r5-ye2" secondAttribute="height" multiplier="1:1" id="iI9-ry-E5Y"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="qto-89-SyM" firstAttribute="centerY" secondItem="Lel-r5-ye2" secondAttribute="centerY" id="8Hi-wz-zsL"/>
-                            <constraint firstItem="Lel-r5-ye2" firstAttribute="leading" secondItem="cq9-tZ-z2g" secondAttribute="leading" constant="10" id="BTe-Ei-Lrr"/>
-                            <constraint firstAttribute="bottom" secondItem="Lel-r5-ye2" secondAttribute="bottom" constant="12" id="fzh-yC-eRr"/>
-                            <constraint firstAttribute="height" constant="28" id="khx-Wx-CKP"/>
-                            <constraint firstItem="qto-89-SyM" firstAttribute="leading" secondItem="Lel-r5-ye2" secondAttribute="trailing" constant="5" id="zbF-4C-ZzH"/>
-                        </constraints>
-                    </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="RJL-2s-rhU" firstAttribute="trailing" secondItem="MRw-at-qSf" secondAttribute="trailing" constant="-5" id="5ox-YR-4Cw"/>
-                <constraint firstItem="MRw-at-qSf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="CNh-Ve-k4V"/>
-                <constraint firstItem="cq9-tZ-z2g" firstAttribute="top" secondItem="MRw-at-qSf" secondAttribute="bottom" constant="3" id="Co2-uN-I3Y"/>
-                <constraint firstItem="jsm-0Q-wbZ" firstAttribute="bottom" secondItem="MRw-at-qSf" secondAttribute="bottom" constant="-5" id="QLR-Xv-1Yu"/>
-                <constraint firstItem="jsm-0Q-wbZ" firstAttribute="leading" secondItem="MRw-at-qSf" secondAttribute="leading" constant="5" id="SB4-wa-SXz"/>
-                <constraint firstAttribute="trailing" secondItem="MRw-at-qSf" secondAttribute="trailing" id="XDt-w3-wl8"/>
-                <constraint firstItem="cq9-tZ-z2g" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="afW-V0-Kzi"/>
-                <constraint firstAttribute="bottom" secondItem="cq9-tZ-z2g" secondAttribute="bottom" id="bAD-KA-anb"/>
-                <constraint firstItem="RJL-2s-rhU" firstAttribute="bottom" secondItem="MRw-at-qSf" secondAttribute="bottom" constant="-5" id="gBn-o9-jCY"/>
-                <constraint firstAttribute="trailing" secondItem="cq9-tZ-z2g" secondAttribute="trailing" id="hb8-3n-raZ"/>
-                <constraint firstItem="MRw-at-qSf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="kiY-Qi-1JZ"/>
+                <constraint firstItem="jsm-0Q-wbZ" firstAttribute="bottom" secondItem="MRw-at-qSf" secondAttribute="bottom" constant="-5" id="0yA-bM-bAS"/>
+                <constraint firstItem="jsm-0Q-wbZ" firstAttribute="leading" secondItem="MRw-at-qSf" secondAttribute="leading" constant="5" id="5qN-Yn-cFF"/>
+                <constraint firstItem="Lel-r5-ye2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="Df3-i9-Zp0"/>
+                <constraint firstItem="qto-89-SyM" firstAttribute="centerY" secondItem="Lel-r5-ye2" secondAttribute="centerY" id="FCE-vj-Qnd"/>
+                <constraint firstAttribute="trailing" secondItem="MRw-at-qSf" secondAttribute="trailing" id="OXp-Ix-o2R"/>
+                <constraint firstItem="Lel-r5-ye2" firstAttribute="top" secondItem="MRw-at-qSf" secondAttribute="bottom" constant="5" id="PnF-rr-fzJ"/>
+                <constraint firstItem="RJL-2s-rhU" firstAttribute="bottom" secondItem="MRw-at-qSf" secondAttribute="bottom" constant="-5" id="QYZ-ox-8uK"/>
+                <constraint firstItem="RJL-2s-rhU" firstAttribute="trailing" secondItem="MRw-at-qSf" secondAttribute="trailing" constant="-5" id="RKl-gx-Va4"/>
+                <constraint firstAttribute="bottom" secondItem="Lel-r5-ye2" secondAttribute="bottom" constant="12" id="cJo-I3-74O"/>
+                <constraint firstItem="qto-89-SyM" firstAttribute="leading" secondItem="Lel-r5-ye2" secondAttribute="trailing" constant="5" id="fFj-In-qji"/>
+                <constraint firstItem="MRw-at-qSf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="grP-nB-dTd"/>
+                <constraint firstAttribute="trailing" secondItem="qto-89-SyM" secondAttribute="trailing" constant="5" id="lnx-32-a2V"/>
+                <constraint firstItem="MRw-at-qSf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="s69-iV-HqA"/>
             </constraints>
             <size key="customSize" width="246" height="164"/>
-            <point key="canvasLocation" x="-655" y="13"/>
+            <connections>
+                <outlet property="iconImageView" destination="MRw-at-qSf" id="fne-cg-9vo"/>
+                <outlet property="nickNameLabel" destination="jsm-0Q-wbZ" id="hmF-hk-nDV"/>
+                <outlet property="onlineBtn" destination="RJL-2s-rhU" id="LjM-wu-6LM"/>
+                <outlet property="roomNameLabel" destination="qto-89-SyM" id="rHb-ID-HfL"/>
+            </connections>
+            <point key="canvasLocation" x="-1127" y="-165"/>
         </collectionViewCell>
     </objects>
     <resources>

@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,65 +36,62 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="100" verticalCompressionResistancePriority="100" text="天津市" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJw-Zl-zeq">
-                                <rect key="frame" x="143" y="3" width="37" height="15"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DjU-Vu-Y91">
+                                <rect key="frame" x="105" y="2" width="75" height="16"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" priority="100" constant="41" id="hRS-eC-Pdg"/>
-                                    <constraint firstAttribute="height" constant="15" id="xeK-sY-Xg0"/>
+                                    <constraint firstAttribute="width" constant="75" id="dNS-DT-iIP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pcL-cF-ifT">
-                                <rect key="frame" x="130" y="2.5" width="12" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" image="ico_location">
+                                <state key="normal" title="天津市" image="ico_location">
                                     <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="DJw-Zl-zeq" secondAttribute="bottom" constant="12" id="FAw-kL-7k4"/>
                             <constraint firstItem="dxZ-UJ-bsR" firstAttribute="leading" secondItem="sNv-9p-J3i" secondAttribute="leading" constant="5" id="Qpa-LV-5Hz"/>
+                            <constraint firstAttribute="bottom" secondItem="DjU-Vu-Y91" secondAttribute="bottom" constant="12" id="UVy-Wg-hZv"/>
                             <constraint firstAttribute="height" constant="30" id="XRq-of-9oP"/>
-                            <constraint firstAttribute="trailing" secondItem="DJw-Zl-zeq" secondAttribute="trailing" constant="5" id="dDW-ni-QnR"/>
                             <constraint firstAttribute="bottom" secondItem="dxZ-UJ-bsR" secondAttribute="bottom" constant="12" id="iqr-D2-pwd"/>
-                            <constraint firstItem="DJw-Zl-zeq" firstAttribute="leading" secondItem="pcL-cF-ifT" secondAttribute="trailing" constant="1" id="kCd-eG-Q2d"/>
-                            <constraint firstItem="DJw-Zl-zeq" firstAttribute="centerY" secondItem="pcL-cF-ifT" secondAttribute="centerY" id="umN-qd-KTV"/>
+                            <constraint firstAttribute="trailing" secondItem="DjU-Vu-Y91" secondAttribute="trailing" constant="5" id="ivu-XD-oGw"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9999在线" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Efs-T9-3nJ">
-                        <rect key="frame" x="120" y="5" width="60" height="20"/>
-                        <color key="backgroundColor" white="0.16430165816326531" alpha="0.39190960570469796" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6xE-8p-por">
+                        <rect key="frame" x="107" y="8" width="70" height="20"/>
+                        <color key="backgroundColor" white="0.16430165820000001" alpha="0.3919096057" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="4xQ-yz-dPh"/>
-                            <constraint firstAttribute="width" constant="60" id="cyd-bp-NxB"/>
+                            <constraint firstAttribute="height" constant="20" id="AiX-gA-WAW"/>
+                            <constraint firstAttribute="width" constant="70" id="JvR-xO-mtr"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <state key="normal" title="999在线">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="3"/>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
-                    </label>
+                    </button>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="sNv-9p-J3i" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="2Qa-74-QOb"/>
+                <constraint firstAttribute="trailing" secondItem="6xE-8p-por" secondAttribute="trailing" constant="8" id="41d-Nk-nFS"/>
                 <constraint firstItem="3Bu-Uf-Kut" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Cua-QJ-dfC"/>
                 <constraint firstAttribute="trailing" secondItem="3Bu-Uf-Kut" secondAttribute="trailing" id="FoC-q2-FSd"/>
-                <constraint firstAttribute="trailing" secondItem="Efs-T9-3nJ" secondAttribute="trailing" constant="5" id="KsG-YF-a3a"/>
                 <constraint firstAttribute="trailing" secondItem="sNv-9p-J3i" secondAttribute="trailing" id="Lug-Yf-1lH"/>
                 <constraint firstItem="sNv-9p-J3i" firstAttribute="top" secondItem="3Bu-Uf-Kut" secondAttribute="bottom" constant="3" id="V9k-2D-ojp"/>
                 <constraint firstItem="3Bu-Uf-Kut" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="b0y-xU-U6c"/>
                 <constraint firstAttribute="bottom" secondItem="sNv-9p-J3i" secondAttribute="bottom" id="gQu-cN-YeR"/>
-                <constraint firstItem="Efs-T9-3nJ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="hub-3O-5Wm"/>
+                <constraint firstItem="6xE-8p-por" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="qVi-Vw-Dqm"/>
             </constraints>
             <size key="customSize" width="185" height="193"/>
-            <point key="canvasLocation" x="-523" y="-71"/>
+            <connections>
+                <outlet property="cityBtn" destination="DjU-Vu-Y91" id="W9r-6x-WrO"/>
+                <outlet property="iconImageView" destination="3Bu-Uf-Kut" id="3ng-9k-fDu"/>
+                <outlet property="nickNameLabel" destination="dxZ-UJ-bsR" id="vtt-Gt-boU"/>
+                <outlet property="onlineBtn" destination="6xE-8p-por" id="C1O-Lp-oab"/>
+            </connections>
+            <point key="canvasLocation" x="-1065" y="-73"/>
         </collectionViewCell>
     </objects>
     <resources>
