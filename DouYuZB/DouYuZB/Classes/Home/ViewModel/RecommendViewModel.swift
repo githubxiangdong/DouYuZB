@@ -107,7 +107,7 @@ extension RecommendViewModel {
             // 1, 获取正体字点数据
             guard let resultDic = result as? [String : AnyObject] else {return}
             // 2, 根据data的key，获取数据
-            guard let dataArr = resultDic as? [[String : AnyObject]] else {return}
+            guard let dataArr = resultDic["data"] as? [[String : AnyObject]] else {return}
             // 3, 字典转模型
             for dic in dataArr {
                 let model = AdsModel(dic: dic)

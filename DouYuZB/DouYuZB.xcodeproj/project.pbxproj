@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C497D0FB7CA96F3F913512DF /* Pods_DouYuZB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A35535DF8C48C5C00210387C /* Pods_DouYuZB.framework */; };
+		D53B096F1EC01F1200144377 /* AdsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B096D1EC01F1200144377 /* AdsCollectionViewCell.swift */; };
+		D53B09701EC01F1200144377 /* AdsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53B096E1EC01F1200144377 /* AdsCollectionViewCell.xib */; };
 		D53B75BF1EB1D1AE005DA31D /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B75BE1EB1D1AE005DA31D /* NetworkTools.swift */; };
 		D53B75C31EB1F0EC005DA31D /* RecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B75C21EB1F0EC005DA31D /* RecommendViewModel.swift */; };
 		D53B75C51EB1F494005DA31D /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B75C41EB1F494005DA31D /* NSDate-Extension.swift */; };
@@ -47,6 +49,8 @@
 		17DACAE3AAD6231C80F33A5A /* Pods-DouYuZB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYuZB.release.xcconfig"; path = "Pods/Target Support Files/Pods-DouYuZB/Pods-DouYuZB.release.xcconfig"; sourceTree = "<group>"; };
 		A35535DF8C48C5C00210387C /* Pods_DouYuZB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouYuZB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4967E4C26DC946C756C792B /* Pods-DouYuZB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYuZB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DouYuZB/Pods-DouYuZB.debug.xcconfig"; sourceTree = "<group>"; };
+		D53B096D1EC01F1200144377 /* AdsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdsCollectionViewCell.swift; sourceTree = "<group>"; };
+		D53B096E1EC01F1200144377 /* AdsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdsCollectionViewCell.xib; sourceTree = "<group>"; };
 		D53B75BE1EB1D1AE005DA31D /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		D53B75C21EB1F0EC005DA31D /* RecommendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewModel.swift; sourceTree = "<group>"; };
 		D53B75C41EB1F494005DA31D /* NSDate-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
@@ -263,6 +267,8 @@
 				D5AEF4591EAF43BB0076A5F6 /* CollectionHeaderView.xib */,
 				D5B3D8741EBC77BA0008AA4F /* RecommendAdv.swift */,
 				D5B3D87A1EBC78B30008AA4F /* RecommendAdv.xib */,
+				D53B096D1EC01F1200144377 /* AdsCollectionViewCell.swift */,
+				D53B096E1EC01F1200144377 /* AdsCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -381,6 +387,7 @@
 				D58835491EADD03300DB47CB /* Focus.storyboard in Resources */,
 				D5AEF45B1EAF43BB0076A5F6 /* CollectionHeaderView.xib in Resources */,
 				D58835461EADD01E00DB47CB /* Live.storyboard in Resources */,
+				D53B09701EC01F1200144377 /* AdsCollectionViewCell.xib in Resources */,
 				D58835431EADCFFD00DB47CB /* Home.storyboard in Resources */,
 				D588354F1EADD05700DB47CB /* Mine.storyboard in Resources */,
 			);
@@ -460,6 +467,7 @@
 				D588355B1EADD8B500DB47CB /* HomeViewController.swift in Sources */,
 				D58835621EADF1DB00DB47CB /* Common.swift in Sources */,
 				D53B75C31EB1F0EC005DA31D /* RecommendViewModel.swift in Sources */,
+				D53B096F1EC01F1200144377 /* AdsCollectionViewCell.swift in Sources */,
 				D53B75C91EB2017F005DA31D /* AnchorModel.swift in Sources */,
 				D5AEF4571EAF365D0076A5F6 /* RecommendViewController.swift in Sources */,
 			);

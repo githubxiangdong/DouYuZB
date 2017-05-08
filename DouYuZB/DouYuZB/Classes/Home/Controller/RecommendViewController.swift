@@ -52,7 +52,7 @@ class RecommendViewController: UIViewController {
     // MARK:- 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // 设置Ui界面
         setupUI()
         
@@ -88,7 +88,7 @@ extension RecommendViewController {
         
         // 2, 请求广告栏数据
         recommendVM.requestAds {
-
+            self.adView.adsModels = self.recommendVM.adsModels
         }
     }
 }

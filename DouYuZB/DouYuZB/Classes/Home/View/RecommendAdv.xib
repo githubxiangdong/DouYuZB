@@ -25,10 +25,11 @@
                     </collectionViewFlowLayout>
                     <connections>
                         <outlet property="dataSource" destination="iN0-l3-epB" id="ffM-s5-Vgh"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="CHq-PB-9yg"/>
                     </connections>
                 </collectionView>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="prY-rX-wCR">
-                    <rect key="frame" x="326" y="121" width="39" height="37"/>
+                    <rect key="frame" x="326" y="116" width="39" height="37"/>
                     <color key="pageIndicatorTintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="currentPageIndicatorTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                 </pageControl>
@@ -36,7 +37,7 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="EEO-NL-iT5" secondAttribute="bottom" id="Qqe-7i-xtq"/>
                 <constraint firstItem="EEO-NL-iT5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Vxe-I7-7wL"/>
-                <constraint firstAttribute="bottom" secondItem="prY-rX-wCR" secondAttribute="bottom" constant="-8" id="c4V-T7-j5g"/>
+                <constraint firstAttribute="bottom" secondItem="prY-rX-wCR" secondAttribute="bottom" constant="-3" id="c4V-T7-j5g"/>
                 <constraint firstItem="EEO-NL-iT5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cFV-Di-BKb"/>
                 <constraint firstAttribute="trailing" secondItem="EEO-NL-iT5" secondAttribute="trailing" id="dJx-VW-is9"/>
                 <constraint firstAttribute="trailing" secondItem="prY-rX-wCR" secondAttribute="trailing" constant="10" id="ebt-oX-Z3n"/>
@@ -44,7 +45,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="collectionView" destination="EEO-NL-iT5" id="ocJ-cP-stz"/>
-                <outlet property="pageControl" destination="EEO-NL-iT5" id="TPk-x5-L61"/>
+                <outlet property="pageControl" destination="prY-rX-wCR" id="hCG-9k-z0e"/>
             </connections>
             <point key="canvasLocation" x="-850" y="-134"/>
         </view>

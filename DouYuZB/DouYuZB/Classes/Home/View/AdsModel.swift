@@ -14,8 +14,8 @@ class AdsModel: NSObject {
     var title : String = ""
     // 图片地址
     var pic_url  : String = ""
-    // 主播信息对应的模型字典
-    var room : [String : AnyObject]? {
+    // 主播信息对应的字典
+    var room : [String : Any]? {
         didSet {
             guard let room = room else { return}
             anchor = AnchorModel(dic: room)
