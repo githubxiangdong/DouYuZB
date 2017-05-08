@@ -36,6 +36,7 @@ class RecommendAdv: UIView {
     //MARK:- 控件属性
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var pageControl: UIPageControl!
+    
     //MARK:- 系统回调函数
     override func awakeFromNib() {
         super.awakeFromNib()

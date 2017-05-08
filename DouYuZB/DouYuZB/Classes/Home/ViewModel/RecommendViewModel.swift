@@ -99,7 +99,6 @@ extension RecommendViewModel {
     }
     
     //MARK:- 请求广告栏数据
-    // http://www.douyutv.com/api/v1/slide/6?version=2.300
     func requestAds(_ finishCallBack : @escaping () -> ()) {
         
         NetworkTools.request(.get, URLString: "http://www.douyutv.com/api/v1/slide/6", parameters: ["version" : "2.300"]) { (result) in

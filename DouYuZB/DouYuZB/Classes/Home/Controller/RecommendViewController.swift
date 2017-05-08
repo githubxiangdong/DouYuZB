@@ -14,6 +14,7 @@ private let kItemH : CGFloat = kItemW * 0.6 + 3 * kItemMargin + 15  // item高�
 private let kNiceItemH : CGFloat = kItemW + 3 * kItemMargin + 15 // 颜值item的高度 15是字体label的高度
 private let kHeaderH : CGFloat = 50 // 组头的高度
 private let kAdViewH = kScreenW * 3/8 // 广告栏的高度
+private let kGameH :CGFloat = 90 // 游戏推荐的高度
 
 private let kNormalCellID = "kNormalCellID"
 private let kNiceCellID = "kNiceCellID"
@@ -46,8 +47,14 @@ class RecommendViewController: UIViewController {
     }()
     fileprivate lazy var adView : RecommendAdv = {
         let adView = RecommendAdv.recommendAdv()
-        adView.frame = CGRect(x: 0, y: -kAdViewH, width: kScreenW, height: kAdViewH)
+        adView.frame = CGRect(x: 0, y: -(kAdViewH + kGameH), width: kScreenW, height: kAdViewH)
         return adView
+    }()
+    fileprivate lazy var gameView : GameRecommendView = {
+    
+        let gameView = GameRecommendView.gameRecommendView()
+        gameView.frame = CGRect(x: 0, y: -kGameH, width: kScreenW, height: kGameH)
+        return gameView
     }()
     // MARK:- 系统回调函数
     override func viewDidLoad() {
@@ -72,8 +79,11 @@ extension RecommendViewController {
         // 2, 将adView添加到collectioView上
         collectionView.addSubview(adView)
         
-        // 3, 设置collectionView的内边距
-        collectionView.contentInset = UIEdgeInsetsMake(kAdViewH, 0, 0, 0)
+        // 3, 将game添加到collectionView
+        collectionView.addSubview(gameView)
+        
+        // 4, 设置collectionView的内边距
+        collectionView.contentInset = UIEdgeInsetsMake(kAdViewH + kGameH, 0, 0, 0)
     }
 }
 
@@ -82,8 +92,11 @@ extension RecommendViewController {
     fileprivate func loadData() {
         
         // 1, 请求推荐数据
-        recommendVM.requestData { 
+        recommendVM.requestData {
+            // 1, 展示推荐数据
             self.collectionView.reloadData()
+            // 2, 将数据传给gameView
+            self.gameView.groupModels = self.recommendVM.anchorGroups
         }
         
         // 2, 请求广告栏数据

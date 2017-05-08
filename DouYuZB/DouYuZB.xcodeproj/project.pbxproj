@@ -10,6 +10,10 @@
 		C497D0FB7CA96F3F913512DF /* Pods_DouYuZB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A35535DF8C48C5C00210387C /* Pods_DouYuZB.framework */; };
 		D53B096F1EC01F1200144377 /* AdsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B096D1EC01F1200144377 /* AdsCollectionViewCell.swift */; };
 		D53B09701EC01F1200144377 /* AdsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53B096E1EC01F1200144377 /* AdsCollectionViewCell.xib */; };
+		D53B09721EC0440300144377 /* GameRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B09711EC0440300144377 /* GameRecommendView.swift */; };
+		D53B09741EC0441400144377 /* GameRecommendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53B09731EC0441400144377 /* GameRecommendView.xib */; };
+		D53B09771EC04E6800144377 /* GameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B09751EC04E6800144377 /* GameCollectionViewCell.swift */; };
+		D53B09781EC04E6800144377 /* GameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D53B09761EC04E6800144377 /* GameCollectionViewCell.xib */; };
 		D53B75BF1EB1D1AE005DA31D /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B75BE1EB1D1AE005DA31D /* NetworkTools.swift */; };
 		D53B75C31EB1F0EC005DA31D /* RecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B75C21EB1F0EC005DA31D /* RecommendViewModel.swift */; };
 		D53B75C51EB1F494005DA31D /* NSDate-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B75C41EB1F494005DA31D /* NSDate-Extension.swift */; };
@@ -51,6 +55,10 @@
 		D4967E4C26DC946C756C792B /* Pods-DouYuZB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYuZB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DouYuZB/Pods-DouYuZB.debug.xcconfig"; sourceTree = "<group>"; };
 		D53B096D1EC01F1200144377 /* AdsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdsCollectionViewCell.swift; sourceTree = "<group>"; };
 		D53B096E1EC01F1200144377 /* AdsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdsCollectionViewCell.xib; sourceTree = "<group>"; };
+		D53B09711EC0440300144377 /* GameRecommendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRecommendView.swift; sourceTree = "<group>"; };
+		D53B09731EC0441400144377 /* GameRecommendView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameRecommendView.xib; sourceTree = "<group>"; };
+		D53B09751EC04E6800144377 /* GameCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCollectionViewCell.swift; sourceTree = "<group>"; };
+		D53B09761EC04E6800144377 /* GameCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameCollectionViewCell.xib; sourceTree = "<group>"; };
 		D53B75BE1EB1D1AE005DA31D /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		D53B75C21EB1F0EC005DA31D /* RecommendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewModel.swift; sourceTree = "<group>"; };
 		D53B75C41EB1F494005DA31D /* NSDate-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate-Extension.swift"; sourceTree = "<group>"; };
@@ -269,6 +277,10 @@
 				D5B3D87A1EBC78B30008AA4F /* RecommendAdv.xib */,
 				D53B096D1EC01F1200144377 /* AdsCollectionViewCell.swift */,
 				D53B096E1EC01F1200144377 /* AdsCollectionViewCell.xib */,
+				D53B09711EC0440300144377 /* GameRecommendView.swift */,
+				D53B09731EC0441400144377 /* GameRecommendView.xib */,
+				D53B09751EC04E6800144377 /* GameCollectionViewCell.swift */,
+				D53B09761EC04E6800144377 /* GameCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -384,9 +396,11 @@
 				D5AEF45F1EAF4A230076A5F6 /* NormalCollectionViewCell.xib in Resources */,
 				D599126E1EADA0B700B8AE0D /* Main.storyboard in Resources */,
 				D5AEF4631EAF59460076A5F6 /* NiceCollectionViewCell.xib in Resources */,
+				D53B09741EC0441400144377 /* GameRecommendView.xib in Resources */,
 				D58835491EADD03300DB47CB /* Focus.storyboard in Resources */,
 				D5AEF45B1EAF43BB0076A5F6 /* CollectionHeaderView.xib in Resources */,
 				D58835461EADD01E00DB47CB /* Live.storyboard in Resources */,
+				D53B09781EC04E6800144377 /* GameCollectionViewCell.xib in Resources */,
 				D53B09701EC01F1200144377 /* AdsCollectionViewCell.xib in Resources */,
 				D58835431EADCFFD00DB47CB /* Home.storyboard in Resources */,
 				D588354F1EADD05700DB47CB /* Mine.storyboard in Resources */,
@@ -456,6 +470,7 @@
 				D5B3D87D1EBC941C0008AA4F /* AdsModel.swift in Sources */,
 				D5AEF45A1EAF43BB0076A5F6 /* CollectionHeaderView.swift in Sources */,
 				D588355E1EADE76900DB47CB /* UIBarButtonItem-Extension.swift in Sources */,
+				D53B09771EC04E6800144377 /* GameCollectionViewCell.swift in Sources */,
 				D58835561EADD84700DB47CB /* MainViewController.swift in Sources */,
 				D5AEF4621EAF59460076A5F6 /* NiceCollectionViewCell.swift in Sources */,
 				D58835641EAE026700DB47CB /* PageContentView.swift in Sources */,
@@ -465,6 +480,7 @@
 				D53B75C51EB1F494005DA31D /* NSDate-Extension.swift in Sources */,
 				D59912691EADA0B700B8AE0D /* AppDelegate.swift in Sources */,
 				D588355B1EADD8B500DB47CB /* HomeViewController.swift in Sources */,
+				D53B09721EC0440300144377 /* GameRecommendView.swift in Sources */,
 				D58835621EADF1DB00DB47CB /* Common.swift in Sources */,
 				D53B75C31EB1F0EC005DA31D /* RecommendViewModel.swift in Sources */,
 				D53B096F1EC01F1200144377 /* AdsCollectionViewCell.swift in Sources */,
