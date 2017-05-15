@@ -56,6 +56,7 @@
             </constraints>
             <connections>
                 <outlet property="icon" destination="wOP-ip-ROt" id="G89-3O-4fk"/>
+                <outlet property="moreBtn" destination="443-j1-4Y2" id="gVR-i2-xxt"/>
                 <outlet property="title" destination="fDP-qd-CUG" id="hBF-Tr-l4O"/>
             </connections>
             <point key="canvasLocation" x="-186" y="-113"/>

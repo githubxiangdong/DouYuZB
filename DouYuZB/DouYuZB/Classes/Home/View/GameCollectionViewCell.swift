@@ -15,13 +15,17 @@ class GameCollectionViewCell: UICollectionViewCell {
     @IBOutlet var titleLabel: UILabel!
     
     //MARK: 定义模型属性
-    var model : AnchorGroupModel? {
+    var baseModel : BaseGameModel? {
     
         didSet {
         
-            titleLabel.text = model?.tag_name
-            let iconUrl = URL(string: model?.icon_url ?? "")
-            iconImageView.kf.setImage(with: iconUrl, placeholder: UIImage(named: "home_more_btn"))
+            titleLabel.text = baseModel?.tag_name
+            // 利用可选绑定判断是否存在图片地址
+            if let iconUrl = URL(string: baseModel?.icon_url ?? ""){
+                iconImageView.kf.setImage(with: iconUrl)
+            }else{
+                iconImageView.image = UIImage(named: "home_more_btn")
+            }
         }
     }
 }

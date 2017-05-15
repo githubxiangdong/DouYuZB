@@ -14,20 +14,10 @@ private let kEdgeInsetMargin : CGFloat = 10
 class GameRecommendView: UIView {
     
     //MARK:- 定义数据属性
-    var groupModels : [AnchorGroupModel]? { // 主播分类模型数据
+    var groupModels : [BaseGameModel]? { // 主播分类模型数据
      
         didSet {
-            
-            // 1, 移除前两组数据
-            groupModels?.removeFirst()
-            groupModels?.removeFirst()
-            
-            // 2, 添加个更多组的图标
-            let moreModel = AnchorGroupModel()
-            moreModel.tag_name = "更多"
-            groupModels?.append(moreModel)
-            
-            // 3, 然后刷新数据
+            // 刷新数据
             collectionView.reloadData()
         }
     }
@@ -65,9 +55,7 @@ extension GameRecommendView : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kCellID, for: indexPath) as! GameCollectionViewCell
-        
-        cell.model = groupModels![indexPath.item]
-        
+        cell.baseModel = groupModels![indexPath.item]
         return cell
     }
 }
