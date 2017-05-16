@@ -8,88 +8,48 @@
 
 import UIKit
 
-private let kItemMargin : CGFloat = 5
-private let kItemW : CGFloat = (kScreenW - 3*kItemMargin) / 2 //图片的宽
-private let kItemH : CGFloat = kItemW * 0.6 + 3 * kItemMargin + 15  // item高度 15是字体label的高度
-private let kHeaderH : CGFloat = 50
-private let kNormalCellID = "kNormalCellID"
-private let kheaderViewID = "kheaderViewID"
-
-class AmuseViewController: UIViewController {
+private let kMenuViewH : CGFloat = 200
+class AmuseViewController: BaseAnchorViewController {
 
     //MARK:- 懒加载属性
     fileprivate lazy var amuseVM : AmuseViewModel = AmuseViewModel()
-    fileprivate lazy var collectionView : UICollectionView = {[unowned self] in
-        
-        // 1, 创建布局
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: kItemW, height: kItemH)
-        layout.minimumLineSpacing = 0
-        layout.minimumInteritemSpacing = 0
-        layout.sectionInset = UIEdgeInsetsMake(0, kItemMargin, 0, kItemMargin)
-        layout.headerReferenceSize = CGSize(width: kScreenW, height: kHeaderH)
-        
-        // 2, 创建collectionView
-        let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: layout)
-        collectionView.backgroundColor = UIColor.white
-        collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth] //collectionView的宽高可以随着父控件宽高的变化而变化
-        collectionView.dataSource = self
-        
-        collectionView.register(UINib(nibName: "NormalCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: kNormalCellID)
-        collectionView.register(UINib(nibName: "CollectionHeaderView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kheaderViewID)
-        return collectionView
+    fileprivate lazy var menuView : AmuseMenuView = {
+        let menuView = AmuseMenuView.amuseMenuView()
+        menuView.frame = CGRect(x: 0, y: -kMenuViewH, width: kScreenW, height: kMenuViewH)
+        return menuView
     }()
-    //MARK:- 系统回调
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // 1,
-        setupUI()
-        
-        // 2, 
-        loadData()
-    }
 }
 
-//MARK:- 设置UI界面
+//MARK:- 设置ui界面
 extension AmuseViewController {
-    func setupUI() {
-        view.addSubview(collectionView)
+    override func setupUI() {
+        super.setupUI()
+        collectionView.addSubview(menuView)
+        collectionView.contentInset = UIEdgeInsets(top: kMenuViewH, left: 0, bottom: 0, right: 0)
     }
 }
 
 //MARK:- 请求数据
 extension AmuseViewController {
-    func loadData() {
-        amuseVM.loadAllAmuseData { 
+    override func loadData() {
+        // 1, 给父类里面的ViewModel赋值
+        baseVM = amuseVM
+        // 2, 请求数据
+        amuseVM.loadAllAmuseData {
+            // 2.1, 刷新数据表格
             self.collectionView.reloadData()
+            // 2.2, 调整数据 剔除第一个数据，最热数据
+            var tempGroups = self.amuseVM.anchorGroups
+            tempGroups.removeFirst()
+            self.menuView.groupModels = tempGroups
+            
+            // 3, 请求数据完成
+            self.loadDataFinished()
         }
     }
 }
 
-//MARK:- 调用collectionView的数据源协议
-extension AmuseViewController : UICollectionViewDataSource {
 
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return amuseVM.anchorGroups.count
-    }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return amuseVM.anchorGroups[section].anchors.count
-    }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath) as! NormalCollectionViewCell
-        cell.model = amuseVM.anchorGroups[indexPath.section].anchors[indexPath.item]
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kheaderViewID, for: indexPath) as! CollectionHeaderView
-        headerView.model = amuseVM.anchorGroups[indexPath.section]
-        return headerView
-    }
-}
 
 
 

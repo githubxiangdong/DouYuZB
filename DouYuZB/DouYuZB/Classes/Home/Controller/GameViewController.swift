@@ -9,15 +9,15 @@
 import UIKit
 
 private let kEdgeMargin : CGFloat = 10
-private let kItemW : CGFloat = (kScreenW - 2 * kEdgeMargin) / 3
-private let kItemH : CGFloat = kItemW * 6 / 5
+private let kGameItemW : CGFloat = (kScreenW - 2 * kEdgeMargin) / 3
+private let kGameItemH : CGFloat = kGameItemW * 6 / 5
 private let kHeaderViewH : CGFloat = 50
 private let kGameViewH : CGFloat = 90
 
 private let kGameCellID = "kGameCellID"
 private let kHeaderViewId = "kHeaderViewId"
 
-class GameViewController: UIViewController {
+class GameViewController: BaseViewController {
 
     //MARK:- 懒加载属性
     fileprivate lazy var gameVM : GameViewModel = GameViewModel()
@@ -25,7 +25,7 @@ class GameViewController: UIViewController {
         
         // 1, 创建布局
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: kItemW, height: kItemH)
+        layout.itemSize = CGSize(width: kGameItemW, height: kGameItemH)
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         layout.sectionInset = UIEdgeInsetsMake(0, kEdgeMargin, 0, kEdgeMargin)
@@ -67,16 +67,20 @@ class GameViewController: UIViewController {
 //MARK:- 设置ui界面
 extension GameViewController {
     
-    fileprivate func setupUI() {
-    
+    override func setupUI() {
+        
+        // 0, 给contentView赋值
+        contentView = collectionView
         // 1, 将collectionView添加到view上
         view.addSubview(collectionView)
         // 2, 添加顶部的headerView
         collectionView.addSubview(topHeaderView)
         // 3, 将常见游戏的view添加到collectionView上
         collectionView.addSubview(gameView)
-        // 3, 设置collectionView的内边距,保证加在上面的头视图可以显示
+        // 4, 设置collectionView的内边距,保证加在上面的头视图可以显示
         collectionView.contentInset = UIEdgeInsets(top: kHeaderViewH + kGameViewH, left: 0, bottom: 0, right: 0)
+        // 5,
+        super.setupUI()
     }
 }
 
@@ -90,6 +94,9 @@ extension GameViewController {
             // 2, 展示常见游戏
             let groups = self.gameVM.gameModels[0..<10]// 将前10条数据取出来，不用利用for循环取出
             self.gameView.groupModels = Array(groups)
+            
+            // 3, 请求数据完成
+            self.loadDataFinished()
         }
     }
 }

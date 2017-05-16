@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameViewModel: NSObject {
+class GameViewModel {
     
     lazy var gameModels : [GameModel] = [GameModel]()
 }

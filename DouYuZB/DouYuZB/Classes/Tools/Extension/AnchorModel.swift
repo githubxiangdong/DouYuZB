@@ -14,7 +14,7 @@ class AnchorModel: NSObject {
     /// 房间对应的url
     var vertical_src : String = ""
     /// 判断是手机直播还是电脑直播
-    // 0 : 手机直播， 1 : 电脑直播
+    // 0 : 电脑直播（普通房间）， 1 : 手机直播（秀场直播）
     var isVertical : Int = 0
     /// 房间名
     var room_name : String = ""
