@@ -13,6 +13,8 @@ class CustomNavigation: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //MARK:- 给pop添加全屏手势
+        
         // 1, 获取系统的pop手势
         guard let systemGes = interactivePopGestureRecognizer else {return}
         // 2, 将获取的手势添加到view中的view
@@ -26,9 +28,20 @@ class CustomNavigation: UINavigationController {
             let name = ivar_getName(ivar)
             print(String(cString: name!))
         }*/
-        // 3.2 利用kvc取出属性
-        let targets = systemGes.value(forKey: "_targets")
+        // 利用kvc取出属性
+        let targets = systemGes.value(forKey: "_targets") as? [NSObject]
+        guard let targetObjc = targets?.first else {return}
+        print(targetObjc)
+        // 3.2 取出target
+        guard let target = targetObjc.value(forKey: "target") else {return}
         
+        // 3.3 取出action
+        let action = Selector(("handleNavigationTransition:"))
+        
+        // 4, 创建自己的pan手势
+        let pan = UIPanGestureRecognizer()
+        gestView.addGestureRecognizer(pan)
+        pan.addTarget(target, action: action)
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
